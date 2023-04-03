@@ -61,7 +61,7 @@ function GalleryItem({
       ref={ref}
     >
       <div></div>
-      <div className={"gallery-item"}>
+      <div className="gallery-item">
         <div className="gallery-item-info">
           <h1 className="gallery-info-title">{title}</h1>
           <h2 className="gallery-info-subtitle">{subtitle}</h2>
@@ -83,10 +83,7 @@ export default function Gallery({ src, index, columnOffset }) {
   const ref = useRef(null);
 
   useEffect(() => {
-    // This does not seem to work without a settimeout
-    setTimeout(() => {
-      console.log(ref.current.offsetWidth);
-      console.log(ref.current.clientWidth);
+    let ctx = gsap.context(() => {
       let sections = gsap.utils.toArray(".gallery-item-wrapper");
 
       gsap.to(sections, {
@@ -98,12 +95,12 @@ export default function Gallery({ src, index, columnOffset }) {
           scroller: "#main-container",
           pin: true,
           scrub: 0.5,
-          snap: 1 / (sections.length - 1),
-          end: () => `+=${document.querySelector('gallery')}`,
+          // snap: 1 / (sections.length - 1),
+          end: () => `+=6000`,
         },
       });
-      ScrollTrigger.refresh();
-    });
+   });
+   return () => ctx.revert(); // <-- CLEANUP!
   }, []);
 
   const handleUpdateActiveImage = (index) => {
