@@ -1,7 +1,6 @@
-import React from 'react';
-import {gsap} from "gsap";
+import React, {useEffect} from 'react';
 import SplitText from '../../utils/Split3.min';
-import { useEffect } from 'react';
+import {gsap} from "gsap";
 
 
 import './style.scss';
