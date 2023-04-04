@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 import {gsap} from "gsap";
-import SplitText from '../../utils/Split3.min.js';
+import SplitText from '../../utils/Split3.min';
 import { useEffect } from 'react';
 
 const Navbar = () => {

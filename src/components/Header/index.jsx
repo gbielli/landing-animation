@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import {gsap} from "gsap";
-import SplitText from '../../utils/Split3.min.js'
-import { useEffect } from 'react'
+import SplitText from '../../utils/Split3.min';
+import { useEffect } from 'react';
 
 
-import './style.scss'
+import './style.scss';
 
 const Header = () => {
   useEffect(() => {

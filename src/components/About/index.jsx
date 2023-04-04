@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import SectionHeader from '../SectionHeader'
 import gsap from 'gsap'
-import SplitText from '../../utils/Split3.min.js'
+import SplitText from '../../utils/Split3.min'
 import cn from 'classnames'
 import useOnScreen from '../../hooks/useOnScreen'
 
